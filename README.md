@@ -1,10 +1,19 @@
 # Weather-Journal App Project
 
-## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This project is developed based on Udacity front-end development project (https://github.com/udacity/fend/tree/refresh-2019/projects/weather-journal-app). Following changes have been made:
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+- Removed comments only sample codes.
+- Reorganize page elements and update page styles.
+- Add package.json and eslint file to assist package installation.
+- Front-end: Add click listener to request weather data from OpenWeather, update server data and update journal entry UI accordingly.
+- Back-end:
+  - Add GET and POST routes to store and fetch journal data.
+  - Use `body-parser` and `cors` middlewares.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+## Run web app
+- Install node packages through `npm install`.
+- Start the server through `npm start`.
+- Access the web app through `http://localhost:8000`.
+
+## Note
+- The OpenWeather API Key included in the code is for review purpose only. It may be deleted upon review completed.

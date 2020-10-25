@@ -1,5 +1,5 @@
 /* Global Variables */
-// Note: This key would be removed after review.
+// Note: This API key may be deactivated after review.
 const OPEN_WEATHER_API_KEY = '7763228b84aa4eba0706cdf3f4a60425';
 const OPEN_WEATHER_BASE_PATH = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -50,7 +50,7 @@ const updateLastWeatherJournal = async () => {
 const onGenerateClicked = async (evt) => {
     evt.stopPropagation();
     const zip = document.getElementById('zip').value;
-    const userResponse = document.getElementById('userResponse').value;
+    const userResponse = document.getElementById('feeling').value;
     try {
         const weatherData = await retrieveWeatherData(zip);
         const temperature = weatherData.main.temp;
