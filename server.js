@@ -1,6 +1,8 @@
 // Setup empty JS object to act as endpoint for all routes
 const projectData = {
-    journals: [],
+    temp: null,
+    date: null,
+    userResponse: null,
 };
 
 // Require Express to run server and routes
@@ -20,13 +22,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Weather journal routes
-app.get('api/journals', (req, res) => {
+app.get('/api/journals', (req, res) => {
     // Return a list of recent searched journals, as JSON array
-    res.send(projectData.journals);
+    res.send(projectData);
 });
 
 const requiredFields = ['temp', 'date', 'userResponse'];
-app.post('api/journals', (req, res) => {
+app.post('/api/journals', (req, res) => {
     for (const field of requiredFields) {
         if (!req.body || !req.body[field]) {
             res.status(400).send(`Missing required field: "${field}"`);
@@ -34,9 +36,9 @@ app.post('api/journals', (req, res) => {
         }
     }
     const { temp, date, userResponse } = req.body;
-    projectData.journals.push({
-        temp, date, userResponse,
-    });
+    projectData.temp = temp;
+    projectData.date = date;
+    projectData.userResponse = userResponse;
     res.status('201').end();
 });
 

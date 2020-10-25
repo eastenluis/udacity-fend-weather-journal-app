@@ -13,7 +13,7 @@ body {
     display: grid;
     gap: 1em;
     grid-template-areas: "header header" "form entries";
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 80px 1fr;
     grid-template-columns: 1fr minmax(400px, 1fr);
     max-width: 1200px;
     margin-left: auto;
@@ -36,11 +36,14 @@ body {
 }
 
 .journal-form {
+    border: 1px dashed #666;
     grid-area: form;
+    padding: 10px;
 }
 
 .journal-entries {
     grid-area: entries;
+    padding: 10px;
 }
 
 /* Form styles */
@@ -65,7 +68,8 @@ body {
     font-size: 1em;
     padding: 5px;
     margin-bottom: 0.5em;
-    width: 480px;
+    max-width: 480px;
+    width: 100%;
 }
 
 .journal-form button {
@@ -78,4 +82,25 @@ body {
 .journal-entries .title {
     font-weight: bold;
     font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#entryHolder {
+    border-top: 1px dashed #b60016;
+    padding-top: 10px;
+}
+
+.temp-banner {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#temp {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#date {
+    display: inline-block;
+    margin-right: 5px;
 }
