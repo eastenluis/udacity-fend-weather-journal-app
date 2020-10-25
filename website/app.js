@@ -39,6 +39,14 @@ const updateLastWeatherJournal = async () => {
         throw new Error(`HTTP Status: ${response.status}`);
     }
     const { temp, date, userResponse } = await response.json();
+
+    const entryHolder = document.getElementById('entryHolder');
+    if (!temp || !date) {
+        entryHolder.style.visibility = 'hidden';
+        return;
+    }
+
+    entryHolder.style.visibility = 'visible';
     const tempElm = document.getElementById('temp');
     tempElm.innerText = temp ? `${temp}℃` : '';
     const dateElm = document.getElementById('date');

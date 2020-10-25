@@ -85,14 +85,13 @@ body {
     margin-bottom: 10px;
 }
 
-#entryHolder {
-    border-top: 1px dashed #b60016;
-    padding-top: 10px;
-}
 
 .temp-banner {
+    border-top: 1px dashed #666;
+    color: #838A2D;
     font-weight: bold;
     margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 #temp {
